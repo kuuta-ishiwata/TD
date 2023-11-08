@@ -1,4 +1,4 @@
-#include "Player.h"
+ï»¿#include "Player.h"
 #include <assert.h>
 #include <ImGuiManager.h>
 #include "MATHEX.h"
@@ -31,7 +31,7 @@ void Player::Update()
 	Vector3 move = {0, 0, 0};
 
 	const float kCharacterSpeed = 0.2f;
-	// ‰Ÿ‚µ‚½•ûŒü‚ÅˆÚ“®ƒxƒNƒgƒ‹‚ğ•ÏX
+	// æŠ¼ã—ãŸæ–¹å‘ã§ç§»å‹•ãƒ™ã‚¯ãƒˆãƒ«ã‚’å¤‰æ›´
 
 	if (input_->PushKey(DIK_LEFT)) {
 		move.x -= kCharacterSpeed;
@@ -45,10 +45,10 @@ void Player::Update()
 		move.y -= kCharacterSpeed;
 	}
 
-	// ‰ñ“]‘¬‚³[ƒ‰ƒWƒAƒ“/frane]
+	// å›è»¢é€Ÿã•[ãƒ©ã‚¸ã‚¢ãƒ³/frane]
 	const float kRotspeed = 0.02f;
 
-	// ‰Ÿ‚µ‚½•ûŒü‚ÅˆÚ“®ƒxƒNƒgƒ‹‚ğ•ÏX
+	// æŠ¼ã—ãŸæ–¹å‘ã§ç§»å‹•ãƒ™ã‚¯ãƒˆãƒ«ã‚’å¤‰æ›´
 
 	if (input_->PushKey(DIK_A)) {
 		worldtransform_.rotation_.y -= kRotspeed;
@@ -60,12 +60,13 @@ void Player::Update()
 
 	
 	XINPUT_STATE joyState;
+
 	if (Input::GetInstance()->GetJoystickState(0, joyState)) {
 
-		// ‘¬‚³
+		// é€Ÿã•
 		const float speed = 0.3f;
 
-		// ˆÚ“®—Ê
+		// ç§»å‹•é‡
 		move = {
 		    (float)joyState.Gamepad.sThumbLX / SHRT_MAX * kCharacterSpeed, 0.0f,
 		    (float)joyState.Gamepad.sThumbLY / SHRT_MAX * kCharacterSpeed};

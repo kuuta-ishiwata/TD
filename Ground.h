@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <Model.h>
 #include <WorldTransform.h>
 
@@ -13,10 +13,10 @@ public:
 
 private:
 
-	//ƒ[ƒ‹ƒh•ÏXƒf[ƒ^
+	//ãƒ¯ãƒ¼ãƒ«ãƒ‰å¤‰æ›´ãƒ‡ãƒ¼ã‚¿
 	WorldTransform worldtransform_;
 
-	//ƒ‚ƒfƒ‹
+	//ãƒ¢ãƒ‡ãƒ«
 	Model* model_ = nullptr;
 
 	ViewProjection* viewprojection_;

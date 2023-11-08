@@ -1,4 +1,4 @@
-#include "Ground.h"
+﻿#include "Ground.h"
 #include <ImGuiManager.h>
 #include "MATHEX.h"
 
@@ -36,7 +36,7 @@ void Ground::Draw(ViewProjection& viewProjection)
 {
 
 
-
+	model_->Draw(worldtransform_, viewProjection);
 
 
 }

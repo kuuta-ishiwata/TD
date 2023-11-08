@@ -7,6 +7,8 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
+#include "Player.h"
+#include "Ground.h"
 
 
 /// <summary>
@@ -44,6 +46,27 @@ private: // メンバ変数
 	DirectXCommon* dxCommon_ = nullptr;
 	Input* input_ = nullptr;
 	Audio* audio_ = nullptr;
+	Sprite* sprite_ = nullptr;
+
+	uint32_t textureHandle_ = 0;
+
+	std::unique_ptr<Model> model_;
+	std::unique_ptr<Model> groundmodel_;
+
+
+	std::unique_ptr<Player> player_;
+	std::unique_ptr<Ground> ground_;
+
+	WorldTransform worldtransform_;
+
+	ViewProjection viewprojection_;
+
+	float inputFloat3[3] = {0, 0, 0};
+
+	bool isDebugCameraActive_ = false;
+
+	// デバックカメラ
+	//DebugCamera* debugCamera_ = nullptr;
 
 	/// <summary>
 	/// ゲームシーン用
